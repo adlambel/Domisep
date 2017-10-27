@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Contact</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="menu">
+    <div class="menu-container">
+        <ul>
+            <li>
+                <a href="userInterface.html" style="font-size: larger"><img src="h.png" width="40" height="40"
+                                                                            id="logo"></a>
+            </li>
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <a href="about.html">A propos</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="login.html">Se connecter</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Contactez-nous</h1>
+    <br/>
+    <form class="form-container" method="post">
+        <p>
+            <input required type="text" class="input-text" name="nom" placeholder="Nom" value=""/>
+            <input required type="text" class="input-text" name="prenom" placeholder="Prénom" value=""/>
+        </p>
+        <p>
+            <input required type="text" class="input-text" name="sujet" placeholder="Sujet" value=""/>
+            <input required type="tel" class="input-text" name="phone" placeholder="Téléphone" value=""/>
+        </p>
+        <p>
+            <input required type="text" class="input-text" name="email" placeholder="Email" value=""/>
+        </p>
+        <textarea class="form-control " name="message" id="message" rows="6" placeholder="Message"
+                  aria-label="Entrez votre message ici" required></textarea>
+        <br/>
+        <br/>
+        <br/>
+        <p style="margin-left: 20em"><input type="submit" name="submit" value="Envoyer" class="form-control" id="submitbutton"></p>
+    </form>
+</div>
+</body>
+<footer>
+    <div id="img-text">
+        <div id="image">
+            <p>Tous droits réservés.</p>
+            <p>Home inc.</p>
+            <p>Tel : 0123456789.</p>
+        </div>
+        <div id="texte">
+            <img src="contour%20blanc.png" width="175" height="100">
+            <img src="twitter.png" width="65" height="60" style="margin-bottom: 2%">
+        </div>
+    </div>
+</footer>
+
+</html>
