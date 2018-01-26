@@ -1,0 +1,137 @@
+body{
+    background-color: #34495E;
+    color: white;
+}
+
+
+#subscription{
+    align-items: center;
+    margin: 3% 3%;
+}
+
+#account {
+    margin-bottom: 3%;
+}
+
+.list_inputs{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.li_input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 3vw;
+    margin: 1vw;
+}
+.inscri_input{
+    width:50%;
+    background-color: #34495e;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top:3%;
+    margin-left:15%;
+    color: white;
+}
+
+.inscri_input:focus{
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+
+h1{
+    width: 100%;
+    text-align:center;
+    padding: 0;
+    margin: 0;
+}
+
+h2{
+    text-align:center;
+    margin: 10px;
+    padding:0;
+}
+
+
+#container{
+    justify-content: center;
+    margin-top: 3%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+#accountContainer{
+    height: 15em;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#bills{
+    display: inline-block;
+    margin: 1% 10% 0px 5%;
+    height: 10em;
+    width: 80%;
+}
+
+a{
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+ul{
+    margin-top: 0;
+    margin-left: 15%;
+    list-style: none;
+}
+
+p{
+    text-align: center;
+}
+
+.button {
+    background-color: #3498db;
+    color:  white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 3%;
+    padding: 20px 50px;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    font-size: larger;
+    margin-right: 20%;
+}
+
+.button:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: white;
+}
+
+img{
+    width: 30em;
+    height: auto;
+}
+
+#payment{
+    display: inline-block;
+    justify-items: flex-start;
+    align-items: center;
+}
