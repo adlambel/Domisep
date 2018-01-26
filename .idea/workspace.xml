@@ -1,81 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b437920-cda5-4581-8495-9bea06448bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/Authentication.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/ModelUser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/SessionHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/SessionUtils.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/UserGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Auth/ValidationRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/Autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/Config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/Sanitize.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/SplClassLoader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Config/Validation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Controller/ControlAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Controller/ControlTechnicien.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Controller/ControlVisitor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Controller/ControlVisitorAuth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Controller/FrontController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Capteur.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Client.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Donnee.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Droit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Lotissement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Maison.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Music.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Salle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Session.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Metier/Ville.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Model/ModelCapteur.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Model/ModelProblem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Model/ModelRoom.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistance/Connection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistance/DAL/CapteurGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistance/DAL/ProblemGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistance/DAL/RoomGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/account_admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/account_tech.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/add_modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/assets/style_error.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/error_login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/error_signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/header_admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/header_technicien.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/problem_answer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/problem_close.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/problem_send.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vues/vueErreurDefault.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/alarme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/ampoule.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/camera.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/contour blanc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/f blanc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/img_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/twitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vues/assets/images/volets.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assistance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/profile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sessions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/statistics.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/userInterface.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/Vues/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/contact.html" afterPath="$PROJECT_DIR$/Vues/assistance.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img_1.png" afterPath="$PROJECT_DIR$/Vues/assets/images/img_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/Vues/assets/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test.css" afterPath="$PROJECT_DIR$/Vues/assets/test.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/thermomètre.png" afterPath="$PROJECT_DIR$/Vues/assets/images/thermomètre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/user.css" afterPath="$PROJECT_DIR$/Vues/assets/user.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="7b437920-cda5-4581-8495-9bea06448bcc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +25,8 @@
       <file leaf-file-name="Config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Config/Config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -593,17 +519,18 @@
       <workItem from="1516088992369" duration="19936000" />
       <workItem from="1516364073890" duration="44192000" />
       <workItem from="1516705645896" duration="828000" />
-      <workItem from="1516962500163" duration="3779000" />
+      <workItem from="1516962500163" duration="3807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194090000" />
+    <option name="totallyTimeSpent" value="194118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1541779" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1541779" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1043,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Config/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
