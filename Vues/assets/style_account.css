@@ -135,3 +135,132 @@ img{
     justify-items: flex-start;
     align-items: center;
 }
+
+.button-home {
+    width: 20%;
+    height: 8%;
+    background-color: #3498db;
+    color:  white;
+    text-align: center;
+    text-decoration: none;
+    border-radius:20px;
+    border: solid;
+    border-color: #3498db;
+    font-size: larger;
+    margin-right: 1%;
+}
+
+.button-home:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: white;
+}
+
+#home {
+    text-align: center;
+    margin: 3% 3%;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-color: white;
+    text-align: center;
+}
+
+.modal-header h2 {
+    text-align: left;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    transition-property: all;
+    transition-duration: 0.1s;
+}
+
+.input:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+    text-align: right;
+}
+
+
+.input_select {
+    border: none;
+    font-size: large;
+    border-bottom: solid 2px gray;
+    width: 30%;
+    margin-bottom: 2%;
+    background-color: white;
+    color: grey;
+}
+
+.input_select:focus {
+    border-bottom: solid 3px #3498db;
+    font-size: larger;
+}
+
+.submit {
+    text-align: center;
+    width: 15vw;
+    height: 3vw;
+    background-color: #3498db;
+    border: solid 2px #3498db;
+    border-radius: 15px;
+    margin-top: 3%;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 5px;
+}
+
+.submit:hover{
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+}
+
+
+in
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+

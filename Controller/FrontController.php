@@ -120,6 +120,16 @@ class FrontController
                     }
                     break;
 
+                case "addHome":
+                    if ($_SESSION["user"]["role"] == "client") {
+                        ControlVisitorAuth::addHome();
+                    } else {
+                        $dataError["home"] = "You are not logged in, please sign in to add homes.";
+                        require(Config::getVuesErreur()["default"]);
+                    }
+                    break;
+
+
                 // 3) actions accessibles aux techniciens authentifiés
 
 
@@ -158,6 +168,7 @@ class FrontController
                         require(Config::getVuesErreur()["default"]);
                     }
                     break;
+
 
                 // 4) actions accessibles aux promoteurs authentifiés
 
