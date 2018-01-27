@@ -10,6 +10,7 @@
 <body onload="init()">
 <?php include("header_connect.php"); ?>
 <?php $rooms = \Domisep\Controller\ControlVisitorAuth::getRooms(); ?>
+<?php $home = \Domisep\Controller\ControlVisitorAuth::getHomes(); ?>
 
 
 <div class="centrer">
@@ -29,6 +30,16 @@
 </div>
 
 <div class="container_list">
+    <select class="select_room" style="margin-bottom: 2%" name="room">
+        <option value="" disabled selected>Select your house</option>
+
+        <?php foreach ($home as $h) { ?>
+
+            <option> <?php echo $h["nom"]?> </option>
+
+        <?php } ?>
+    </select>
+
     <select class="select_room" name="room">
         <option value="" disabled selected>Select your room</option>
 
@@ -41,7 +52,7 @@
 </div>
 
 <div class="screen" id="cam_screen">
-    <img id="loadingGif" src="<?= Domisep\Config\Config::getResources()['loading'] ?>">/>
+    <img id="loadingGif" src="<?= Domisep\Config\Config::getResources()['loading'] ?>" />
 </div>
 
 <div class="screen" id="light_screen">

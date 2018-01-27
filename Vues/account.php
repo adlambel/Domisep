@@ -41,15 +41,15 @@
     <hr>
 
     <div id="home">
-        <h2>My homes</h2>
+        <h2>My houses</h2>
         <select class="inscri_input" style="height: 7%" id="home" name="home" placeholder="Home">
-            <option value="" disabled selected>Select a Home</option>
+            <option value="" disabled selected>Select a House</option>
             <?php foreach ($home as $h) { ?>
                 <option><?php echo $h["nom"] ?> </option>
             <?php } ?>
         </select><br/>
-        <button class="button-home" id="editHome">Modify Home</button>
-        <button class="button-home" id="addHome">Add Home</button>
+        <button class="button-home" id="editHome">Edit House</button>
+        <button class="button-home" id="addHome">Add House</button>
     </div>
     <hr>
 

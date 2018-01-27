@@ -16,7 +16,6 @@
     <li class="session" id="createSensor">
         <img src="<?= Domisep\Config\Config::getResources()['plus'] ?>" class="picture"/>
         <label class="nom_session">Create sensor </label>
-
     </li>
     <li class="session" id="create_user">
         <img src="<?= Domisep\Config\Config::getResources()['plus'] ?>" id="pic_user" class="picture"/>
