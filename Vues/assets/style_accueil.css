@@ -62,6 +62,7 @@ body{
     font-weight: bold;
     font-family: sans-serif;
     margin-bottom: 5vw;
+    color: #3498db;
 
 }
 .centrer{
@@ -88,6 +89,7 @@ body{
   font-size: 1.5vw;
   font-family: sans-serif;
   text-align: justify;
+    color: white;
 }
 
 .container_icon {

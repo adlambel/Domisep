@@ -24,14 +24,14 @@
 
 <section class="page1" id="mysect1">
     <div class="centrer">
-    <label id="domisep"> Domisep </label>
-        <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>">
+    <label id="domisep" hidden> Domisep </label>
+        <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>" hidden>
 
     </div>
 </section>
 <section class="page1" id="mysect2">
     <ul class="liste">
-        <li> <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['aboutus'] ?>"> </li>
+        <!--<li> <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['aboutus'] ?>"> </li> -->
         <li><label class="sstitremenu">About us</label></li>
         <li>
           <p class="paragraphe">

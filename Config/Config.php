@@ -138,7 +138,8 @@ class Config
             "whatwedo" => $javaDirectoryURL . "images/Whatwedo.png",
             "plus" => $javaDirectoryURL . "images/plus.png",
             "users" => $javaDirectoryURL . "images/users.png",
-            "maison" => $javaDirectoryURL . "images/maison.jpeg"
+            "maison" => $javaDirectoryURL . "images/maison.jpeg",
+            "logomarine" => $javaDirectoryURL . "images/logomarine.png"
 
 
         );
