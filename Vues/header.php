@@ -15,7 +15,7 @@
 
 <body onload="init()">
 <ul class="list">
-    <li class="link" style="width: 3%" ><a href="?action=index"><img src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>"style=" width: 90%; border-color: white; border-radius: 10px; border: solid;"></a></li>
+    <li class="link" style="width: 3%" ><a href="?action=index"><img src="<?= Domisep\Config\Config::getResources()['logo'] ?>"style=" width: 90%; border-color: white; border-radius: 10px; border: solid;"></a></li>
     <li class="link" ><a href="?action=index">Home</a></li>
     <li class="link" ><a id="index" href="?action=contact">Contact</a></li>
 

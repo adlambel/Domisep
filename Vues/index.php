@@ -11,13 +11,25 @@
 
 <?php include("header.php") ?>
 
-<div class="page1">
+<!-- Start vertical navigation -->
+<div id="op-verticalnav">
+    <ul class="op-sectionlist">
+        <li class="op-v-item"><a class="op-v-link" href="#mysect1"><span class="v-marker"></span><span class="op-v-itemdesc"><span class="op-v-itembg">Top</span></span></a></li>
+        <li class="op-v-item"><a class="op-v-link" href="#mysect2"><span class="v-marker"></span><span class="op-v-itemdesc"><span class="op-v-itembg">About us</span></span></a></li>
+        <li class="op-v-item"><a class="op-v-link" href="#mysect3"><span class="v-marker"></span><span class="op-v-itemdesc"><span class="op-v-itembg">Our vision</span></span></a></li>
+        <li class="op-v-item"><a class="op-v-link" href="#mysect4"><span class="v-marker"></span><span class="op-v-itemdesc"><span class="op-v-itembg">What we do</span></span></a></li>
+    </ul>
+</div>
+<!-- end vertical navigation -->
+
+<div class="page1" id="mysect1">
     <div class="centrer">
     <label id="domisep"> Domisep </label>
         <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>">
+
     </div>
 </div>
-<div class="page1">
+<div class="page1" id="mysect2">
     <ul class="liste">
         <li> <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['aboutus'] ?>"> </li>
         <li><label class="sstitremenu">About us</label></li>
@@ -31,7 +43,7 @@
         </li>
     </ul>
 </div>
-<div class="page1">
+<div class="page1" id="mysect3">
     <ul class="liste">
         <li> <img src="<?= Domisep\Config\Config::getResources()['vision'] ?>"> </li>
         <li><label class="sstitremenu">Our Vision</label></li>
@@ -44,7 +56,7 @@
     </ul>
 </div>
 </div>
-<div class="page1">
+<div class="page1" id="mysect4">
     <ul class="liste">
         <li> <img src="<?= Domisep\Config\Config::getResources()['whatwedo'] ?>"> </li>
         <li><label class="sstitremenu">What we do ! </label></li>

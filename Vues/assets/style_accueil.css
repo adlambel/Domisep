@@ -8,6 +8,11 @@ body{
     font-family: Roboto;
 }
 
+#mysect1 {
+    background-image: url("images/maisonfond.jpg");
+    background-repeat: no-repeat;
+}
+
 .list{
     position: absolute;
     top: 0%;
@@ -207,3 +212,15 @@ body{
     margin: auto;
     margin-top: 5vw;
 }
+
+/*== V nav ==*/
+#op-verticalnav {position:fixed; top:0; right:0; left: auto;height: 100%;display:table}
+#op-verticalnav .op-sectionlist {height:100%; text-align:center; display:table-cell; vertical-align:middle}
+#op-verticalnav .op-v-item {display:block}
+#op-verticalnav .justify-height {}
+#op-verticalnav .op-v-link {display:block; margin:12px 0}
+#op-verticalnav .v-marker {width:20px; height:20px; border-radius:50%; background-color:#3498db; display:inline-block; vertical-align:middle; margin-bottom:-2px; margin-right:10px;border: 1px solid #3498db;}
+#op-verticalnav .op-v-link:hover .v-marker, #op-verticalnav .op-v-item .op-v-link.active .v-marker {background-color:#e67e22; }
+#op-verticalnav .op-v-itemdesc {display:inline-block; font-size:14px; position:absolute; white-space:nowrap; line-height:normal; padding:0 34px 0 0;vertical-align:middle}
+#op-verticalnav .op-v-itemdesc .op-v-itembg{display:inline-block; background-color:rgba(0,0,0,.5); color:#fff; padding:4px 10px 6px 10px; border:1px solid rgba(160,160,160,.2); border-radius:4px; }
+#op-verticalnav .op-v-link:hover .op-v-itemdesc {right:0px; }
