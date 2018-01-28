@@ -22,14 +22,14 @@
 </div>
 <!-- end vertical navigation -->
 
-<div class="page1" id="mysect1">
+<section class="page1" id="mysect1">
     <div class="centrer">
     <label id="domisep"> Domisep </label>
         <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>">
 
     </div>
-</div>
-<div class="page1" id="mysect2">
+</section>
+<section class="page1" id="mysect2">
     <ul class="liste">
         <li> <img class="imgAccueil" src="<?= Domisep\Config\Config::getResources()['aboutus'] ?>"> </li>
         <li><label class="sstitremenu">About us</label></li>
@@ -42,8 +42,8 @@
           </p>
         </li>
     </ul>
-</div>
-<div class="page1" id="mysect3">
+</section>
+<section class="page1" id="mysect3">
     <ul class="liste">
         <li> <img src="<?= Domisep\Config\Config::getResources()['vision'] ?>"> </li>
         <li><label class="sstitremenu">Our Vision</label></li>
@@ -54,9 +54,9 @@
         </p>
         </li>
     </ul>
-</div>
-</div>
-<div class="page1" id="mysect4">
+</section>
+
+<section class="page1" id="mysect4">
     <ul class="liste">
         <li> <img src="<?= Domisep\Config\Config::getResources()['whatwedo'] ?>"> </li>
         <li><label class="sstitremenu">What we do ! </label></li>
@@ -68,9 +68,34 @@
 	   </ul>
 	</li>
     </ul>
-</div>
+</section>
 
 
+
+
+<script>
+
+    /* ====== Add Smooth effect ===== */
+    $(function() {
+        var scrollToAnchor = function( id ) {
+            var elem = $("section[id='"+ id +"']"); // on crée une balise d'ancrage
+            if ( typeof elem.offset()  === "undefined" ) { // on verifie si l'élément existe
+                elem = $("#"+id); }
+            if ( typeof elem.offset()  !== "undefined" ) { // si l'élément existe, on continue
+                $('html, body').animate({
+                    scrollTop: elem.offset().top }, 600 );} // on défini un temps de défilement de page
+        };
+        $("a").click(function( event ) { // on attache la fonction au click
+            if ( $(this).attr("href").match("#") ) { // on vérifie qu'il s'agit d'une ancre
+                event.preventDefault();
+                var href = $(this).attr('href').replace('#', '') // on scroll vers la cible
+                scrollToAnchor( href ); }
+        });
+    });
+
+
+
+</script>
 
 
 
