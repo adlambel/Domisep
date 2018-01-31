@@ -22,7 +22,6 @@ body{
 
 .list_session{
   margin: auto;
-  margin-top: 2%;
   padding: 0;
   width: 80%;
   list-style: none;
@@ -30,7 +29,7 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.5vw;
+  margin-top: 7vw;
 }
 
 .session{
@@ -70,7 +69,7 @@ body{
 
 
 .img_plus{
-  font-size: 10vw;
+  font-size: 6vw;
   color: #2c3e50;
   text-shadow: 0 0 10px #2c3e50;
   height: 8vw;

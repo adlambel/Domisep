@@ -39,6 +39,7 @@ class Authentication
         SessionUtils::endSession();
         setcookie("PHPSESSID", "", time()-1);
         $sessionOK=false;
+        $_SESSION["session"] = null;
     }
 }
 

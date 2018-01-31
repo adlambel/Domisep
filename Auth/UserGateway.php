@@ -15,7 +15,7 @@ class UserGateway
         $this->dbcon = $con;
     }
 
-    /** @brief Permet d'obtenir le rôle d'un utilisateur à partir de son login et son mot de passe.
+    /** @brief Permet d'obtenir un utilisateur à partir de son login et son mot de passe.
      * Renvoie false si echec lors de l'authentification
      * @param $dataError array Tableau d'erreur
      * @param $login string Identifiant de l'utilisateur sur le site
@@ -37,6 +37,10 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /**@brief Permet de retourner le client grâce à l'id utilisateur
+     * @param $user_id
+     * @return bool|mixed
+     */
     public function getClient($user_id)
     {
         $query = 'SELECT * FROM client WHERE id_user=:userid';
@@ -51,6 +55,10 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /** Permet de retourner un technicien grace a son id user
+     * @param $user_id
+     * @return bool|mixed
+     */
     public function getTechnicien($user_id)
     {
         $query = 'SELECT * FROM technicien WHERE id_user=:userid';
@@ -65,6 +73,10 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /** Retourne la ville d'un technicien
+     * @param $id
+     * @return bool|mixed
+     */
     public function getVilleTechnicien($id)
     {
         $query = 'SELECT * FROM ville WHERE id=:ville_id';
@@ -79,6 +91,10 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /** retourne l'id d'une ville par son nom
+     * @param $nom
+     * @return bool|mixed
+     */
     public function getVilleId($nom) {
         $query = 'SELECT id FROM ville WHERE nom=:ville_nom';
         $tab = array(
@@ -92,6 +108,11 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /**Récupère l'id d'un utilisateur par son login. Deprecated utiliser $_session.
+     * @param $dataError
+     * @param $login
+     * @return bool|mixed
+     */
     public function getUserId(&$dataError, $login)
     {
         $query = 'SELECT * FROM user WHERE email=:login';
@@ -107,6 +128,11 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
+    /**
+     * @param $dataError
+     * @param $login
+     * @return bool|mixed
+     */
     public function getUserSessions(&$dataError, $login) {
         $query = 'SELECT * FROM user WHERE email=:login';
         $tab = array(
@@ -120,11 +146,38 @@ class UserGateway
         return $this->dbcon->getResults();
     }
 
-    public function getSessions(&$dataError, $login) {
-        $client = $this->getClient($dataError, $login);
+
+
+    // SESSIONS
+
+    /**
+     * @param $dataError
+     * @param $login
+     * @return bool|mixed
+     */
+    public function getSessions() {
+        $client = $this->getClient($_SESSION["user"]["id"]);
         $query = 'SELECT * FROM sessions WHERE id_client=:id';
         $tab = array(
-            ':id' => array($client['id'], \PDO::PARAM_STR)
+            ':id' => array($client[0]["id"], \PDO::PARAM_STR)
+        );
+        $res = $this->dbcon->prepareAndExecuteQuery($query, $tab);
+        if (!$res) {
+            $dataError['persistance'] = "Query could not be executed. Wrong login or password.";
+            return $res;
+        }
+        return $this->dbcon->getResults();
+    }
+
+    /** Check si le password entré correspond à celui de la session en bdd.
+     * @param $password
+     */
+    public function checkSession($id, $password)
+    {
+        $query = 'SELECT * FROM sessions WHERE id=:id AND password=:pass';
+        $tab = array(
+            ':id' => array($id, \PDO::PARAM_STR),
+            ':pass' => array($password, \PDO::PARAM_STR)
         );
         $res = $this->dbcon->prepareAndExecuteQuery($query, $tab);
         if (!$res) {
@@ -135,8 +188,11 @@ class UserGateway
     }
 
 
-    //  Villes
+    //  VILLES
 
+    /**
+     * @return bool|mixed
+     */
     public function getVilles()
     {
         $query = 'SELECT * FROM ville ORDER BY nom';
@@ -148,6 +204,7 @@ class UserGateway
     }
 
 
+    // CREATION
 
 
     /** @brief Créée un utilisateur dans la BD
@@ -173,6 +230,10 @@ class UserGateway
         return $res;
     }
 
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createUserT($inputArray)
     {
         $inputArray['password'] = hash("sha512", $inputArray['password']);
@@ -191,6 +252,10 @@ class UserGateway
         return $res;
     }
 
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createUserS($inputArray)
     {
         $inputArray['password'] = hash("sha512", $inputArray['password']);
@@ -208,6 +273,11 @@ class UserGateway
         }
         return $res;
     }
+
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createUserE($inputArray)
     {
         $inputArray['password'] = hash("sha512", $inputArray['password']);
@@ -226,6 +296,11 @@ class UserGateway
         return $res;
     }
 
+    /**
+     * @param $dataError
+     * @param $inputArray
+     * @return bool
+     */
     public function createClient(&$dataError, $inputArray)
     {
         $user = $this->getUserId($dataError, $inputArray["email"]);
@@ -242,6 +317,10 @@ class UserGateway
         return $res;
     }
 
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createTechnicien($inputArray)
     {
         $user = $this->getUserId($dataError, $inputArray["email"]);
@@ -262,6 +341,10 @@ class UserGateway
 
     }
 
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createSponsor($inputArray)
     {
         $user = $this->getUserId($dataError, $inputArray["email"]);
@@ -277,6 +360,10 @@ class UserGateway
         return $res;
     }
 
+    /**
+     * @param $inputArray
+     * @return bool
+     */
     public function createEntity($inputArray)
     {
         $user = $this->getUserId($dataError, $inputArray["email"]);
@@ -286,6 +373,23 @@ class UserGateway
             ':nom' => array($inputArray['nom'], \PDO::PARAM_STR),
             ':id' => array($user[0]["id"], \PDO::PARAM_STR),
             ':idville' => array($ville[0]["id"], \PDO::PARAM_STR),
+        );
+        $res = $this->dbcon->prepareAndExecuteQuery($query, $tab);
+        if (!$res) {
+            $dataError['persistance'] = "Query could not be executed. Email may already exist.";
+        }
+        return $res;
+    }
+
+    public function createSession($inputArray)
+    {
+        $pass = $inputArray["p"].$inputArray["a"].$inputArray["s"].$inputArray["ss"];
+        $client = ModelUser::getClient($_SESSION['user']['id']);
+        $query = 'INSERT INTO sessions(nom, password, id_client) VALUES(:nom,:pass,:id)';
+        $tab = array(
+            ':nom' => array($inputArray['name'], \PDO::PARAM_STR),
+            ':pass' => array($pass, \PDO::PARAM_STR),
+            ':id' => array($client["id"], \PDO::PARAM_STR),
         );
         $res = $this->dbcon->prepareAndExecuteQuery($query, $tab);
         if (!$res) {

@@ -24,14 +24,13 @@ $(".input").on("input", function(){
     if($(this).parent().parent().hasClass("last")){
       $(".input_name").show(150);
       $(".input_name").focus();
+      $(".img_plus").hide();
     }
     $(this).parent().parent().css("background-color#3498db");
   }
 });
 
-$(".input_name").on("input", function(){
-  $(".img_plus").addClass("active");
-});
+
 
 $(".last").click( function(){
     $(this).css("opacity","1");

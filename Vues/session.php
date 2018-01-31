@@ -8,42 +8,42 @@
 
 <body onload="init()">
 
-<?php include("header_connect.php") ?>
+<?php include("header_connect.php"); ?>
+<?php $sessions = \Domisep\Controller\ControlVisitorAuth::getSessions(); ?>
 
 <ul class="list_session">
-    <li class="session">
-        <img src="<?= Domisep\Config\Config::getResources()['users'] ?>" class="picture"></img>
-        <div class="list_password">
-            <form method="post" action="?action=checkSessionC">
-                <input class="input" type="password" maxlength="1">
-                <input class="input" type="password" maxlength="1">
-                <input class="input" type="password" maxlength="1">
-                <input class="input" type="password" maxlength="1">
-                <input class="input" type="submit" value="Go" style="font-size: 1vw">
-            </form>
-        </div>
-        <label class="nom_session">MASTER</label>
-    </li>
-    <li class="session">
-        <img src="<?= Domisep\Config\Config::getResources()['users'] ?>" class="picture"></img>
-        <div class="list_password" hidden="false">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-        </div>
-        <label class="nom_session">KIDS</label>
-    </li>
-    <li class="session last">
-        <div class="list_password">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-            <input class="input" type="password" maxlength="1">
-        </div>
-        <input class="input_name" placeholder="Session name" type="text">
-        <img class="img_plus" src="<?= Domisep\Config\Config::getResources()['plus'] ?>"></img>
-    </li>
+    <?php foreach ($sessions as $s) {
+        ?>
+        <li class="session">
+            <img src="<?= Domisep\Config\Config::getResources()['users'] ?>" class="picture"></img>
+            <div class="list_password">
+                <form method="post" action="?action=checkSession">
+                    <input class="input" type="password" maxlength="1" name="one" required>
+                    <input class="input" type="password" maxlength="1" name="two" required>
+                    <input class="input" type="password" maxlength="1" name="three" required>
+                    <input class="input" type="password" maxlength="1" name="four" required>
+                    <input type="text" name="idsess" value="<?php echo $s["id"] ?>" hidden>
+                    <input class="input" type="submit" value="Go" style="font-size: 1vw">
+                </form>
+            </div>
+            <label class="nom_session"><?php echo strtoupper($s["nom"]) ?></label>
+        </li>
+
+    <?php } ?>
+
+    <form method="post" action="?action=createSession">
+        <li class="session last" style="margin-top: -0.25%">
+            <div class="list_password">
+                <input class="input" type="password" maxlength="1" name="p">
+                <input class="input" type="password" maxlength="1" name="a">
+                <input class="input" type="password" maxlength="1" name="s">
+                <input class="input" type="password" maxlength="1" name="ss">
+            </div>
+            <input class="input_name" placeholder="Session name" type="text" name="name">
+            <img class="img_plus" src="<?= Domisep\Config\Config::getResources()['plus'] ?>"/> <br/>
+            <input type="submit" id="sub" value="add" class="input" style="width: 10vw; font-size: 1vw;">
+        </li>
+    </form>
 </ul>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -73,7 +73,7 @@ class FrontController
 
 
                 case "visitorAuth": //Vue accueil client authentifié
-                    if ($_SESSION["user"]["role"] == "client") {
+                    if ($_SESSION["user"]["role"] == "client" && $_SESSION["session"] != null) {
                         require(Config::getVues()["clientAuth"]);
                     } else {
                         require(Config::getVues()["default"]);
@@ -81,7 +81,7 @@ class FrontController
                     break;
 
                 case "stats": //Vue statistiques client
-                    if ($_SESSION["user"]["role"] == "client") {
+                    if ($_SESSION["user"]["role"] == "client" && $_SESSION["session"] != null) {
                         ControlVisitorAuth::stats();
                     } else {
                         $dataError["stats"] = "You are not logged in, please sign in to access statistics.";
@@ -89,12 +89,16 @@ class FrontController
                     }
                     break;
 
-                case "checkSessionC": //Validation des droits pour pages Clients
+                case "checkSession": //Validation des droits pour pages Clients
                     ControlVisitorAuth::checkSession();
                     break;
 
+                case "createSession": //Ajout d'une session client
+                    ControlVisitorAuth::createSession();
+                    break;
+
                 case "account": //Vue "mon compte"
-                    if ($_SESSION["user"]["role"] == "client") {
+                    if ($_SESSION["user"]["role"] == "client" && $_SESSION["session"] != null) {
                         ControlVisitorAuth::account();
                     } else {
                         $dataError["account"] = "You are not logged in, please sign in to access account.";
@@ -121,7 +125,7 @@ class FrontController
                     break;
 
                 case "addHome":
-                    if ($_SESSION["user"]["role"] == "client") {
+                    if ($_SESSION["user"]["role"] == "client" && $_SESSION["session"] != null) {
                         ControlVisitorAuth::addHome();
                     } else {
                         $dataError["home"] = "You are not logged in, please sign in to add homes.";

@@ -11,27 +11,39 @@ use Domisep\Model\ModelRoom;
 
 class ControlVisitorAuth
 {
-    public static function stats() {
+    public static function stats()
+    {
         require(Config::getVues()['stats']);
     }
 
-    public static function account() {
+    public static function account()
+    {
         require(Config::getVues()['account']);
     }
 
 
-    public static function assistance() {
+    public static function assistance()
+    {
         require(Config::getVues()['assistance']);
     }
 
-    public static function problemContact() {
+    public static function problemContact()
+    {
         ModelProblem::createProblem($_POST);
         require(Config::getVues()['assistance']);
         echo("<script src='Vues/problem_send.js'></script>");
     }
 
-    public static function checkSession() {
-        require(Config::getVues()['clientAuth']);
+    public static function checkSession()
+    {
+        $password = $_POST["one"] . $_POST["two"] . $_POST["three"] . $_POST["four"];
+        $sess = ModelUser::checkSession($_POST["idsess"], $password);
+        if (!$sess) {
+            require(Config::getVues()["session"]);
+        } else {
+            $_SESSION["session"] = $sess[0];
+            require(Config::getVues()['clientAuth']);
+        }
     }
 
     public static function getRooms()
@@ -52,15 +64,32 @@ class ControlVisitorAuth
 
     }
 
+    public static function createSession()
+    {
+        if (empty($_POST["p"]) || empty($_POST["a"]) || empty($_POST["s"]) || empty($_POST["ss"]) || empty($_POST["name"])) {
+            require(Config::getVues()["session"]);
+        } else {
+            ModelUser::createSession($_POST);
+            require(Config::getVues()["session"]);
+        }
+    }
+
     public static function getHomes()
     {
         return ModelHome::getHomes();
     }
 
+    public static function getSessions()
+    {
+        return ModelUser::getSessions();
+    }
+
     public static function logout()
-{
-    Authentication::disconnection();
-    //Changement de l'action
-    require(Config::getVues()['default']);
-}
+    {
+        Authentication::disconnection();
+        //Changement de l'action
+        require(Config::getVues()['default']);
+    }
+
+
 }

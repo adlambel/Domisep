@@ -87,6 +87,16 @@ class ModelUser
         return $gw->getVilles();
     }
 
+    public static function getSessions() {
+        $gw = new UserGateway(Config::createConnection());
+        return $gw->getSessions();
+    }
+
+    public static function checkSession($id, $password)
+    {
+        $gw = new UserGateway((Config::createConnection()));
+        return $gw->checkSession($id, $password);
+    }
 
 
 
@@ -143,7 +153,11 @@ class ModelUser
         return $gw->createEntity($inputArray);
     }
 
-
+   public static function createSession($inputArray)
+   {
+       $gw = new UserGateway((Config::createConnection()));
+       return $gw->createSession($inputArray);
+   }
 
 
 }

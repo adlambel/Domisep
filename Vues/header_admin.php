@@ -8,7 +8,7 @@
 
 <body onload="init()">
 <ul class="list">
-    <li class="link" style="width: 3%" ><a href="?action=adminAuth"><img src="<?= Domisep\Config\Config::getResources()['logoAccueil'] ?>"style=" width: 90%; border-color: white; border-radius: 10px; border: solid;"></a></li>
+    <li class="link" style="width: 3%" ><a href="?action=adminAuth"><img src="<?= Domisep\Config\Config::getResources()['logo'] ?>"style=" width: 90%; border-color: white; border-radius: 10px; border: solid;"></a></li>
     <li class="link"><a href="?action=adminAuth">Home</a></li>
     <li class="link"><a href="?action=account_admin">My account</a></li>
     <li class="link"><a href="?action=logout">Log out</a></li>
