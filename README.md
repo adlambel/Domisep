@@ -23,9 +23,9 @@ What things you need to install the software and how to install them :
 A step by step series of examples that tell you have to get a development environment running :
 
 
-- The url of this deposit is: https://github.com/adlambel/Domisep.git
-- Then open a bash git and make the command git clone on the url of this deposit and enter your valid Github credentials to clone the deposit in the folder of your choice.
-- Log on to PhpMyAdmin and launch the SQL dump: dump_sql.sql
+- The url of this repository is: https://github.com/adlambel/Domisep.git
+- Then open a git bash or a shell and make the command git clone on the url of this repository and enter your valid Github credentials to clone the repository in the folder of your choice.
+- Log in to PhpMyAdmin and launch the SQL dump: dump_sql.sql
 
 You are therefore in possession of the site's database.
 By default, there are:
@@ -34,7 +34,7 @@ By default, there are:
 
 - A technician account whose identifiers are: tech@tech.fr / tech
 
-- A customer account whose identifiers are: client@client.fr / customer
+- A customer account whose identifiers are: client@client.fr / customer / session : Master / Pin 1234
 
 Once these steps are done, you are ready to launch the site.
 
@@ -46,16 +46,20 @@ This site is developed on a Linux environment, it is recommended that you use Li
 ### Linux
 
 Place the site folder, by default named Domisep in the folder / var / www / html.
-On Linux, PHP, Apache and MySQL launch automatically. If this is not the case, launch them using a terminal.
-
+On Linux, PHP, Apache and MySQL launch automatically. If this is not the case, launch themdefault it'll be 'domisep', 'root', ''
 The site is then accessible via the url: localhost / Domisep.
 
-### Windows 
+### Windows / Mac
 
-Download Wamp, select PHP 7.0, and place the Domisep folder in the C: // wamp / www / folder.
-Launch the Wamp services. As soon as the logo appears green, you can access the site.
+Download Wamp, select PHP 7.0, and place the Domisep folder in your LAMP/MAMP www / folder.
+Launch the services. As soon as the logo appears green, you can access the site.
 
 The site is then accessible via the url: localhost / Domisep
+
+## Lauching
+
+You'll have to edit the mysql login parameters in order to launch the website correctly.
+To do this, simply update the Domisep/Config/Config.php getAuthData() function by putting your db host, and your mysql database name and credentials. By default it'll be 'localhost','domisep','root', ''.
 
 ## Authors
 
