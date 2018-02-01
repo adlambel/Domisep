@@ -26,4 +26,11 @@ class ModelCapteur
         return $gw->getSensors();
     }
 
+    public static function getLights($inputArray)
+    {
+        echo "modelCaptuer";
+        $gw = new CapteurGateway(Config::createConnection());
+        return $gw->getLights($inputArray);
+    }
+
 }

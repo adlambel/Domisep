@@ -22,7 +22,7 @@ class Config
         $db_host = "localhost";
         $db_name = "domisep";
         $db_user = "root";
-        $db_password = "adididu63";
+        $db_password = "";
         return "mysql:host=$db_host;dbname=$db_name";
     }
 
@@ -53,6 +53,8 @@ class Config
             "account_tech" => $vueDirectory . "account_tech.php",
             "adminAuth" => $vueDirectory . "admin.php",
             "account_admin" => $vueDirectory . "account_admin.php",
+            "light" => $vueDirectory . "light.php",
+            "store" => $vueDirectory . "store.php"
         );
     }
 
@@ -143,6 +145,8 @@ class Config
             "main" => $javaDirectoryURL . "images/main.png",
             "remote" => $javaDirectoryURL . "images/remote.png",
             "secure" => $javaDirectoryURL . "images/secure.png",
+            "store" => $javaDirectoryURL . "images/store1.png",
+
         );
     }
 

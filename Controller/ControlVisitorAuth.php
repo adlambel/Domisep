@@ -5,6 +5,7 @@ namespace Domisep\Controller;
 use Domisep\Auth\Authentication;
 use Domisep\Auth\ModelUser;
 use Domisep\Config\Config;
+use Domisep\Model\ModelCapteur;
 use Domisep\Model\ModelHome;
 use Domisep\Model\ModelProblem;
 use Domisep\Model\ModelRoom;
@@ -84,12 +85,39 @@ class ControlVisitorAuth
         return ModelUser::getSessions();
     }
 
+    public static function getSensors()
+    {
+        switch ($_POST["sensorType"]) {
+
+            case "1":
+                include(Config::getVues()["clientAuth"]);
+                break;
+            case "2":
+                include(Config::getVues()["clientAuth"]);
+                break;
+            case "3":
+                include(Config::getVues()["clientAuth"]);
+                break;
+            case "4":
+                include(Config::getVues()["clientAuth"]);
+                break;
+        }
+    }
+
+    public static function getLights()
+    {
+        echo "control";
+        return ModelCapteur::getLights($_POST);
+    }
+
     public static function logout()
     {
         Authentication::disconnection();
         //Changement de l'action
         require(Config::getVues()['default']);
     }
+
+
 
 
 }

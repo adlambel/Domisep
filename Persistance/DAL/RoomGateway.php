@@ -9,6 +9,8 @@
 namespace Domisep\Persistance\DAL;
 
 
+use Domisep\Auth\ModelUser;
+use Domisep\Model\ModelHome;
 use Domisep\Persistance\Connection;
 
 class RoomGateway
@@ -19,6 +21,23 @@ class RoomGateway
     public function __construct(Connection $con)
     {
         $this->dbcon = $con;
+    }
+
+    public function getRoomByName($inputArray)
+    {
+        echo " getRoomByName ";
+        $maison = ModelHome::getHomeId(ModelUser::getClient($_SESSION["user"]["id"]));
+        $query = 'SELECT * FROM salle WHERE id_type=:idtype AND id_maison=:idmaison';
+        $tab = array(
+            ':idtype' => array($inputArray["roomSelect"], \PDO::PARAM_STR),
+            ':idmaison' => array($maison["id"], \PDO::PARAM_STR),
+        );
+        $res = $this->dbcon->prepareAndExecuteQuery($query);
+
+        if (!$res) {
+            return $res;
+        }
+        return $this->dbcon->getResults();
     }
 
     public function getRooms()

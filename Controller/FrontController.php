@@ -133,6 +133,15 @@ class FrontController
                     }
                     break;
 
+                case "getSensors":
+                    if ($_SESSION["user"]["role"] == "client" && $_SESSION["session"] != null) {
+                        ControlVisitorAuth::getSensors();
+                    } else {
+                        $dataError["home"] = "You are not logged in, please sign in to see sensors.";
+                        require(Config::getVuesErreur()["default"]);
+                    }
+                    break;
+
 
                 // 3) actions accessibles aux techniciens authentifiés
 

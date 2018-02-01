@@ -25,4 +25,11 @@ class ModelRoom
         return $gw->getRooms();
     }
 
+    public static function getRoomByName($inputArray)
+    {
+        echo "modelroom";
+        $gw = new RoomGateway(Config::createConnection());
+        return $gw->getRoomByName($inputArray);
+    }
+
 }

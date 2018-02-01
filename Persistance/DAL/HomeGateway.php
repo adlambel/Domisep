@@ -44,8 +44,26 @@ class HomeGateway
 
     public function getHomes()
     {
+
         $client = ModelUser::getClient($_SESSION["user"]["id"]);
         $query = 'SELECT nom FROM maison WHERE id_client = :client';
+        $tab = array(
+            ':client' => array($client["id"], \PDO::PARAM_STR),
+        );
+        $res = $this->dbcon->prepareAndExecuteQuery($query, $tab);
+        if (!$res) {
+            $dataError['persistance'] = "Query could not be executed. Type may already exist.";
+            foreach ($dataError as $error) {
+                echo $error . "<br/>";
+            }
+            return $res;
+        }
+        return $this->dbcon->getResults();
+    }
+
+    public function getHomeId($client)
+    {
+        $query = 'SELECT id FROM maison WHERE id_client = :client';
         $tab = array(
             ':client' => array($client["id"], \PDO::PARAM_STR),
         );

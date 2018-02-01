@@ -239,3 +239,23 @@ body{
   text-align: center;
   margin-bottom: 2vw;
 }
+
+.submit{
+  text-align: center;
+  width: 20vw;
+  height: 4vw;
+  background-color: #3498db;
+  border: solid 2px #3498db;
+  border-radius: 15px;
+  margin-top: 2vw;
+  margin-left: 30%;
+  color: white;
+  font-size: 2vw;
+  padding: 5px;
+}
+
+.submit:hover{
+  background-color: white;
+  color: #3498db;
+  border-color: #3498db;
+}

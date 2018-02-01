@@ -21,4 +21,10 @@ class ModelHome
         return $gw->getHomes();
     }
 
+    public static function getHomeId($client)
+    {
+        $gw = new HomeGateway(Config::createConnection());
+        return $gw->getHomeId($client);
+    }
+
 }
