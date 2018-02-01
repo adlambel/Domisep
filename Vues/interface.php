@@ -15,44 +15,46 @@
 
 <div class="centrer">
     <ul class="list_icons">
-        <li class="container_icon" id="cam"><img class="icon"
-                                                 src="<?= Domisep\Config\Config::getResources()['cam'] ?> "/></li>
-        <li class="container_icon" id="light"><img class="icon"
-                                                   src="<?= Domisep\Config\Config::getResources()['ampoule'] ?> "/></li>
-        <li class="container_icon" id="temp"><img class="icon"
-                                                  src="<?= Domisep\Config\Config::getResources()['thermometre'] ?> "/>
+        <li class="container_icon" id="cam" onclick="sensorInput()">
+            <img class="icon" src="<?= Domisep\Config\Config::getResources()['cam'] ?> "/>
         </li>
-        <li class="container_icon" id="sun"><img class="icon"
-                                                 src="<?= Domisep\Config\Config::getResources()['soleil'] ?> "/></li>
-        <li class="container_icon" id="humi"><img class="icon"
-                                                  src=" <?= Domisep\Config\Config::getResources()['goutte'] ?> "/></li>
+        <li class="container_icon" id="light" onclick="sensorInput()">
+            <img class="icon" src="<?= Domisep\Config\Config::getResources()['ampoule'] ?> " />
+        </li>
+        <li class="container_icon" id="temp" onclick="sensorInput()">
+            <img class="icon" src="<?= Domisep\Config\Config::getResources()['thermometre'] ?> " />
+        </li>
+        <li class="container_icon" id="sun" onclick="sensorInput()">
+            <img class="icon" src="<?= Domisep\Config\Config::getResources()['soleil'] ?> " />
+        </li>
     </ul>
+
 </div>
 
 <div class="container_list">
-    <select class="select_room" style="margin-bottom: 2%" name="room">
+    <select class="select_room" style="margin-bottom: 2%" name="house" id="house" onchange="houseInput()">
         <option value="" disabled selected>Select your house</option>
 
         <?php foreach ($home as $h) { ?>
 
-            <option> <?php echo $h["nom"]?> </option>
+            <option> <?php echo $h["nom"] ?> </option>
 
         <?php } ?>
     </select>
 
-    <select class="select_room" name="room">
+    <select class="select_room" name="room" id="roomSelect" onchange="roomInput()">
         <option value="" disabled selected>Select your room</option>
 
         <?php foreach ($rooms as $r) { ?>
 
-            <option> <?php echo $r["nom"]?> </option>
+            <option> <?php echo $r["nom"] ?> </option>
 
         <?php } ?>
     </select>
 </div>
 
 <div class="screen" id="cam_screen">
-    <img id="loadingGif" src="<?= Domisep\Config\Config::getResources()['loading'] ?>" />
+    <img id="loadingGif" src="<?= Domisep\Config\Config::getResources()['loading'] ?>"/>
 </div>
 
 <div class="screen" id="light_screen">
@@ -81,19 +83,61 @@
 </div>
 
 <div class="screen" id="temp_screen">
-    <div id="slider"></div>
-    <div class="centerSlider">
-        <label id="valueSlider"></label>
-        <div>
-        </div>
+<ul class="tempList">
+    <li id="plus" class="tempAction" >+</li>
+    <li id="tempValue">20°</li>
+    <li id="minus" class="tempAction">-</li>
+</ul>
+</div>
 
-        <div class="screen" id="sun_screen">
-            sun
-        </div>
+<div class="screen" id="sun_screen" >
+    <ul class="tempList">
+        <li class="liStore ">
+            <div  id="store1" class="store active"></div>
+            <div  id="active1" class="divStore"></div>
+            <label class="labelStore">Store 1</label>
+        </li>
+        <li class="liStore">
+            <div  id="store2" class="store"></div>
+            <label class="labelStore">Store 2</label>
+        </li>
+        <li class="liStore">
+            <div  id="store3" class="store"></div>
+            <label class="labelStore">Store 3</label>
+        </li>
+    </ul>
+</div>
 
-        <div class="screen" id="humi_screen">
-            hum
-        </div>
+<form method="post" action="?action=getInterface">
+    <input type="text" id="houseName" name="houseName">
+    <input type="text" id="roomName" name="roomName">
+    <input type="text" id="sensorType" name="sensorType">
+</form>
+
+<script>
+    function houseInput() {
+        var select = document.getElementById("house"),
+            choice = select.selectedIndex,
+            valeur = select.options[3].value;
+        document.getElementById("houseName").value = valeur;
+    }
+
+    function roomInput() {
+        var selectroom = document.getElementById("roomSelect"),
+            choiceroom = selectroom.selectedIndex,
+            valeurroom = selectroom.options.value;
+        alert(choiceroom);
+        document.getElementById("roomName").value = valeurroom;
+    }
+
+    function sensorInput() {
+        var sensor = event.target.id;
+        alert(sensor);
+        document.getElementById("sensorName").value = sensor;
+    }
+</script>
+
+
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

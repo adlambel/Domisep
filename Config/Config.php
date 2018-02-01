@@ -139,9 +139,10 @@ class Config
             "plus" => $javaDirectoryURL . "images/plus.png",
             "users" => $javaDirectoryURL . "images/users.png",
             "maison" => $javaDirectoryURL . "images/maison.jpeg",
-            "logomarine" => $javaDirectoryURL . "images/logomarine.png"
-
-
+            "logomarine" => $javaDirectoryURL . "images/logomarine.png",
+            "main" => $javaDirectoryURL . "images/main.png",
+            "remote" => $javaDirectoryURL . "images/remote.png",
+            "secure" => $javaDirectoryURL . "images/secure.png",
         );
     }
 

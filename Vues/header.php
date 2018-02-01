@@ -1,6 +1,3 @@
-<?= Domisep\Vues\VueHtmlUtils::cssHTML5(\Domisep\Config\Config::getStyleSheetsURL()['header']); ?>
-
-
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +7,7 @@
     <link rel="stylesheet" href="Vues/modal/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="Vues/modal/css/style.css"> <!-- Gem style -->
     <script src="Vues/modal/js/modernizr.js"></script> <!-- Modernizr -->
+    <?= Domisep\Vues\VueHtmlUtils::cssHTML5(\Domisep\Config\Config::getStyleSheetsURL()['header']); ?>
 
 </head>
 
@@ -19,7 +17,7 @@
     <li class="link" ><a href="?action=index">Home</a></li>
     <li class="link" ><a id="index" href="?action=contact">Contact</a></li>
 
-<nav id="mainnav" class="main-nav" style="margin-top: -10%">
+<nav id="mainnav" class="main-nav">
     <ul id="list-nav">
         <!-- inser more links here -->
         <li class="link"><a id="signin" class="cd-signin" href="#0">Sign in</a></li>
