@@ -6,7 +6,6 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="Vues/modal/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="Vues/modal/css/style.css"> <!-- Gem style -->
-    <script src="Vues/modal/js/modernizr.js"></script> <!-- Modernizr -->
     <?= Domisep\Vues\VueHtmlUtils::cssHTML5(\Domisep\Config\Config::getStyleSheetsURL()['header']); ?>
 
 </head>
